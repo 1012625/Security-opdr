@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test-Correct</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/styling.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a href="/" class="navbar-brand">
+            <img src="https://www.test-correct.nl/hubfs/raw_assets/public/test-correct/images/testcorrect-logo.svg" class="nav__logo-large">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          {% if type != 0 %}
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="ps-1 pe-1 nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Tabellen
+                </a>
+                <ul class="dropdown-menu">
+                    {% for table in table_list %}
+                    <li><a class="dropdown-item" href="/table_details/{{ table }}">{{ table }}</a></li>
+                    {% endfor %}
+                </ul>
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+            <ul class="navbar-nav pe-5">
+              {% if type == 0 %}
+              <li class="ps-1 pe-1 nav-item nav-item">
+                <a class="btn btn-primary" aria-current="page" href="/inlog" >Login</a>
+              </li>
+              {% endif %}
+              {% if type != 0 %}
+              <li class="ps-1 pe-1 nav-item">
+                <a class="btn btn-primary" aria-current="page" href="/logout">Logout</a>
+              </li>
+              {% endif %}
+            </ul>
+        </div>
+      </nav>
+      <div class="hti__overlay" style="background-image: linear-gradient(to right, #004df5 0%, #4781ff 100%);"></div>
+      <div class="hti__overlay" style="background-image: linear-gradient(to right, #004df5 0%, #4781ff 100%);"></div>
+      <div class="hti__content">
+          <div class="container__large">
+          </div>
+      </div>
+      <div id="hs_cos_wrapper_widget_1666439887677" class="p-5 hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module widget-type-rich_text " data-hs-cos-general-type="widget" data-hs-cos-type="module"><span id="hs_cos_wrapper_widget_1666439887677_" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_rich_text" data-hs-cos-general-type="widget" data-hs-cos-type="rich_text"><h2 style="text-align: center; font-size: 32px;"><span style="color: #041f74;">Onze missie?</span></h2>
+        <p style="font-size: 32px; text-align: center;"><span style="color: #041f74;"><span style="font-size: 28px;">Wij geloven erin dat effectief leren een persoonlijke, interactieve benadering vraagt. Waarbij iedere student leert van de ander en zich naar eigen potentie ontwikkelt.&nbsp;</span><br></span></p></span></div>
+      <div class="container d-flex align-items-center justify-content-center">
+        <img src="https://www.test-correct.nl/hubfs/02%20TC%20assets%20-%20illustrations/Formatief-toetsen-Online-toetsplatform%20horizontaal%20v3.svg">
+      </div>
+      </body>
+</html>
